@@ -69,7 +69,7 @@ class QueryTracer:
            (or added as a new node), and the baseline is updated.
     """
 
-    def __init__(self, compile_func, user_file_indicator="test_query_tracking.py"):
+    def __init__(self, compile_func, user_file_indicator):
         self.compile_func = compile_func
         self.user_file_indicator = user_file_indicator.lower()
         self.root = ExecutionNode("Query Execution")
@@ -184,9 +184,9 @@ class QueryTracer:
 
 
 @contextmanager
-def sql_query_trace(compile_func, user_file="test_query_tracking.py"):
+def sql_query_trace(compile_func, filename):
     old_trace = sys.gettrace()
-    tracer = QueryTracer(compile_func, user_file_indicator=user_file)
+    tracer = QueryTracer(compile_func, filename)
 
     def global_tracer(frame, event, arg):
         return tracer.global_trace(frame, event, arg)

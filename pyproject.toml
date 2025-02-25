@@ -1,6 +1,6 @@
 [project]
 name = "sqa-tracker"
-version = "0.1.0"
+version = "0.1.1"
 description = "A tool to track SQLAlchemy query modifications with a structured execution tree and diffs."
 license = "MIT"
 authors = [

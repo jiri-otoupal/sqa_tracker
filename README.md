@@ -35,7 +35,7 @@ def compile_sqlalchemy_query(query):
 
 # Within your session, wrap your code with sql_query_trace
 with Session(engine) as session:
-    with sql_query_trace(compile_sqlalchemy_query, user_file="test_query_tracking.py") as tracer:
+    with sql_query_trace(compile_sqlalchemy_query, Path(__file__).name) as tracer:
         q = session.query(User)
         # ... perform query modifications here ...
         q = q.filter(User.active == True)
