@@ -1,0 +1,18 @@
+[project]
+name = "sqa-tracker"
+version = "0.1.0"
+description = "A static analysis tool for inspecting SQLAlchemy query"
+license = "MIT"
+authors = [
+    { name = "Jiri Otoupal", email = "jiri-otoupal@ips-database.eu" }
+]
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "rich (>=13.9.4,<14.0.0)"
+]
+packages = [{ include = "app" }]
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
