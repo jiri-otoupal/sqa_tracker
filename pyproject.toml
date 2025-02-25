@@ -1,7 +1,7 @@
 [project]
 name = "sqa-tracker"
 version = "0.1.0"
-description = "A static analysis tool for inspecting SQLAlchemy query"
+description = "A tool to track SQLAlchemy query modifications with a structured execution tree and diffs."
 license = "MIT"
 authors = [
     { name = "Jiri Otoupal", email = "jiri-otoupal@ips-database.eu" }
@@ -11,7 +11,8 @@ requires-python = ">=3.10"
 dependencies = [
     "rich (>=13.9.4,<14.0.0)"
 ]
-packages = [{ include = "app" }]
+[[tool.poetry.packages]]
+include = "app"
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]

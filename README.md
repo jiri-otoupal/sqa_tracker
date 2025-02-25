@@ -14,7 +14,7 @@ SQLAlchemy Query Tracker is a Python package that lets you track modifications m
 Download or clone the repository:
 
 ```bash
-git clone https://github.com/yourusername/sqlalchemy-query-tracker.git
+git clone https://github.com/jiri-otoupal/sqlalchemy-query-tracker.git
 cd sqlalchemy-query-tracker
 ```
 
@@ -47,7 +47,7 @@ A complete example is provided in the `test_query_tracking.py` file.
 
 ## Requirements
 
-- Python 3.6+
+- Python 3.10+
 - [SQLAlchemy](https://www.sqlalchemy.org/)
 - [Rich](https://github.com/Textualize/rich)
 
