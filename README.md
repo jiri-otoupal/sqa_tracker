@@ -1,5 +1,5 @@
 # SQLAlchemy Query Tracker
-
+[![Downloads](https://pepy.tech/badge/sqa_tracker)](https://pepy.tech/project/sqa_tracker)
 SQLAlchemy Query Tracker is a Python package that lets you track modifications made to SQLAlchemy query objects in real time. Using Python’s `sys.settrace` along with the [Rich](https://github.com/Textualize/rich) library, it generates a detailed, nested execution tree showing function calls, conditional branches (if, elif, else, case, switch), and recognized query modifications—with unified diffs between query states.
 
 ## Features
@@ -14,8 +14,8 @@ SQLAlchemy Query Tracker is a Python package that lets you track modifications m
 Download or clone the repository:
 
 ```bash
-git clone https://github.com/jiri-otoupal/sqlalchemy-query-tracker.git
-cd sqlalchemy-query-tracker
+git clone https://github.com/jiri-otoupal/sqa_tracker.git
+cd sqa_tracker
 ```
 
 Alternatively, download the ZIP archive from the repository page and extract it.
