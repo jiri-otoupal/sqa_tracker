@@ -182,6 +182,13 @@ class QueryTracer:
         except Exception:
             return None
 
+    def print(self):
+        """
+        Calls `print_query_log()` from query_printer.py.
+        """
+        from app.query_printer import print_query_log
+        print_query_log(self.root)
+
 
 @contextmanager
 def sql_query_trace(compile_func, filename):

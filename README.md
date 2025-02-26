@@ -45,6 +45,28 @@ with Session(engine) as session:
 
 A complete example is provided in the `test_query_tracking.py` file.
 
+Use print method on tracer to show current status without finish execution
+
+```python
+from sqlalchemy.orm import Session
+from query_tracker import sql_query_trace
+
+
+# Define your compile function (this example uses SQLAlchemy's compile)
+def compile_sqlalchemy_query(query):
+    return str(query.statement.compile(compile_kwargs={"literal_binds": True}))
+
+
+# Within your session, wrap your code with sql_query_trace
+with Session(engine) as session:
+    with sql_query_trace(compile_sqlalchemy_query, Path(__file__).name) as tracer:
+        q = session.query(User)
+        # ... perform query modifications here ...
+        q = q.filter(User.active == True)
+        tracer.print()
+        # other code ...
+```
+
 ## Requirements
 
 - Python 3.10+

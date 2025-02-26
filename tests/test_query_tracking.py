@@ -1,4 +1,5 @@
 from pathlib import Path
+from time import sleep
 
 from sqlalchemy import create_engine, Column, Integer, String, Boolean
 from sqlalchemy.orm import Session, declarative_base
@@ -51,6 +52,8 @@ def main():
             # Inside this block, user code is traced
             q = session.query(User)
             q = modify_query(q)
+            tracer.print()
+            sleep(10)
             q = q.order_by(User.name.asc())
 
         # Print the final execution tree
